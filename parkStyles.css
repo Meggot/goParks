@@ -1,0 +1,103 @@
+body {
+	color:black;
+	font-family: Verdana;
+	}
+h1 {
+	font-size: 20px;
+	}
+#breadcrumb {
+	color:white;
+	font-size:0.75em;
+	text-align: bottom;
+	}
+#viewport {
+	padding: 10px;
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+	border: solid 3px black;
+	background: #F0EAD6;
+	margin-left: auto;
+	margin-right: auto;
+	}
+#navbar {
+	color: #500;
+	font-weight: bold;
+	font-size: 1em;
+	padding: 10px;
+	margin: 3px;
+	float: center;
+	border: solid 3px black;
+	background: black;
+	}
+#navbar ul {
+	list-style-type: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+	display: inline;
+	position: relative;
+	}
+#navbar ul + ul {
+	float: right;
+	}
+#navbar ul li {
+	display: inline;
+	}
+#navbar ul li a {
+	text-decoration:none;  
+	padding: 5px 20px 5px 20px; 
+	color: blue;
+	background: green;
+	}
+#navbar ul li a:hover {
+	color: white;
+	}
+#parkBrowseArea {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	overflow: auto;	
+		}
+#parkSearchBox {
+	border: solid 3px black;
+	text-align: left;
+	float: right;
+	position: relative;
+	padding: 10px;
+	}
+#parkSearchBox ul li {
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	border: solid 1px white;
+	list-style-type: none;
+	list-style-image: none;
+	}
+#parkViewPanel
+	{
+	font-size:11px;
+	position: relative;
+	overflow: auto;
+	height:100%;
+	}
+#parkViewPanel table {
+	
+	}
+#parkListings {
+	border: solid 3px black;
+	float:left;
+	margin: auto;
+	}
+#parkListings a:hover {
+	color: blue;
+	}
+#parkListings th + td {
+	font-weight: bold;
+	}
+table {
+	border: 3px solid black;
+	text-align: left;
+	border-color: black;
+	border-spacing: 0.5em;
+	}
