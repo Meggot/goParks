@@ -1,42 +1,97 @@
 body {
-	color:black;
+	color:black	;
 	font-family: Verdana;
+	background: url(imgs/background.png) repeat 0 0;
+	}
+a:hover {
+	color:white;
 	}
 h1 {
-	font-size: 20px;
+	font-size: 2em;
 	}
-#breadcrumb {
+h2 {
+	font-size: 1.5em;
+	color: blue;
+	font-style: italic;
+	display: inline;
+	}
+table {
+	text-align: left;
+	border-color: black;
+	border-spacing: 0.55em;
+	}
+.icon {
+	height: 30px;
+	width: 30px;
+	display: inline;
+	}
+.searchButton {
+    width:100%;
+    height: 10%;
+    color: purple;
+	background: rgba(0, 255, 0, 0.5);
+    line-height: 20px;
+    padding-bottom: 2px;
+    vertical-align: middle;
+    font-family: "Lucida Grande", Geneva, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    <!--font-weight: bold;-->
+    text-transform: none;
+    border:3px solid black;
+    }
+.searchButton:hover {
 	color:white;
-	font-size:0.75em;
-	text-align: bottom;
 	}
-#viewport {
-	padding: 10px;
-	position: relative;
-	max-width: 100%;
-	max-height: 100%;
-	border: solid 3px black;
-	background: #F0EAD6;
-	margin-left: auto;
-	margin-right: auto;
+.actionButton {
+	width:12%;
+    height: 10%;
+    color:green;
+    background: rgba(0, 255, 0, 0.5);
+    line-height: 20px;
+    padding-bottom: 2px;
+    vertical-align: middle;
+    text-align: center;
+    font-family: "Lucida Grande";
+    font-size: 20px;
+    <!--font-weight: bold;-->
+    text-transform: none;
+    border:solid 3px black;
+    margin-right: 3px;
+	}
+.actionButton:hover {
+	color:white;
+	}
+#negative{
+	background: red;
+	color:blue;
 	}
 #navbar {
-	color: #500;
 	font-weight: bold;
-	font-size: 1em;
 	padding: 10px;
-	margin: 3px;
-	float: center;
+	margin-bottom: 3px;
 	border: solid 3px black;
-	background: black;
+	background: rgba(0, 0, 0, 0.5);
+	font-size:0.75em;
+	overflow: auto;
+	min-width: 600px;
+	}
+#titleBar {
+	display:inline;
+	font-size: 1.25em;
+	}
+#languageSelection	 {
+	float:right;
+	display: inline;
 	}
 #navbar ul {
 	list-style-type: none;
 	list-style-image: none;
+	font-size: 1.5em;
 	margin: 0;
 	padding: 0;
 	display: inline;
 	position: relative;
+	line-height: 40px;
 	}
 #navbar ul + ul {
 	float: right;
@@ -47,11 +102,56 @@ h1 {
 #navbar ul li a {
 	text-decoration:none;  
 	padding: 5px 20px 5px 20px; 
-	color: blue;
-	background: green;
+	background: rgba(0,255,0, 0.5);
 	}
-#navbar ul li a:hover {
-	color: white;
+#orientationBar {
+	border: solid 3px black;
+	background: rgba(0, 100, 0, 0.5);
+	overflow: auto;
+	margin-bottom: 3px;
+	height: 5%; 
+	min-width: 620px;
+	}
+#breadcrumb {
+	float: left;
+	font-size:0.75em;
+	text-indent: 0px;
+	}
+#breadcrumb ul {
+	list-style-position: inside;
+	}
+#breadcrumb ul li{
+	color: blue;
+	font-style: bold;
+	display: inline;
+	list-style: none;
+	list-style-position: inside;
+	margin-left: 0;
+	padding-left: 1em;
+	text-indent: -1em
+	}
+#breadcrumb ul li a{
+	font-style: italic;
+	}
+#searchSite {
+	float: right;
+	display: inline;
+	position: relative;
+	font-size: 0.75em;
+	margin-top:6px;
+	}
+#viewport {
+	padding: 10px;
+	position: relative;
+	max-width: 100%;
+	max-height: 100%;
+	border: solid 3px black;
+	margin-left: auto;
+	margin-right: auto;
+	background: rgba(50, 125, 50, 0.5);
+	overflow: auto;
+	min-width: 558px;
+	float:center;
 	}
 #parkBrowseArea {
 	height: 100%;
@@ -62,42 +162,59 @@ h1 {
 #parkSearchBox {
 	border: solid 3px black;
 	text-align: left;
-	float: right;
 	position: relative;
-	padding: 10px;
+	padding: 15px;
+	float: left;
+	background: rgba(255, 255, 255, 0.25);
+	color: blue;
+	min-width: 520px;
+	white-space: nowrap;
+	height: 100%;
+	}
+#parkSearchBox ul {
+	margin: 0;
 	}
 #parkSearchBox ul li {
 	text-align: left;
-	margin: 0;
-	padding: 0;
-	border: solid 1px white;
+	margin: 3px;
+	padding: 0px;
 	list-style-type: none;
 	list-style-image: none;
 	}
-#parkViewPanel
-	{
-	font-size:11px;
-	position: relative;
-	overflow: auto;
-	height:100%;
+#searchForm {
+	background: rgba(0, 0, 0, 0.25);
 	}
-#parkViewPanel table {
-	
+#faciltiesOptions {
+	height:200px;
+	overflow: auto;
+	background: rgba(0, 0, 0, 0.10);
+	border: solid 1px white;
 	}
 #parkListings {
+	float:right;
 	border: solid 3px black;
-	float:left;
-	margin: auto;
+	background: rgba(0, 255, 0, 0.25);
+	height: 100%;
+	position: relative;
+	white-space: nowrap;
+	min-width: 550px;
+	overflow: visible;
+	margin-top: 3px;
 	}
-#parkListings a:hover {
+#parkListings th > td{
+	font-weight:bold;
 	color: blue;
+	font-style: italic;
+	}
+#parkListings th {
+	text-align: center;
+	font-size: 0.75em;
+	}
+#parkListings thead {
+	text-align: center;
 	}
 #parkListings th + td {
 	font-weight: bold;
-	}
-table {
-	border: 3px solid black;
-	text-align: left;
-	border-color: black;
-	border-spacing: 0.5em;
+	color: blue;
+	font-style: italic;
 	}
