@@ -1,11 +1,21 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"> 
 <html lang="en">
-<link rel="stylesheet" type="text/css" href="parkStyles.css">
+<link rel="stylesheet" type="text/css" href="goParksStyles.css">
 <meta http-equiv="Content-type" content="text/html;charset=utf-8"> 
-<head> <title>goParks</title> </head>
+<head> <title>goParks Park Browser</title> </head>
 <body>
-<div id="viewport">
 <div id="navbar">
+<div id="titleBar">
+goParks! Get Active.</div>
+<div id="languageSelection">
+Language Selection: 
+<select name="language">
+<option value="langEnglish">English</option>
+<option value="langSpanish">Espanol</option>
+<option value="langGerman">Deutsch</option>
+<option value="langFrench">Francais</option>
+</select></div>
+<br><br>
 <ul>
 <li><a href="parkBrowser.html">Homepage</a></li>
 <li><a href="parkBrowser.html">Park Browser</a></li>
@@ -16,50 +26,77 @@
 <li><a href="parkBrowser.html">Profile</a></li>
 <li><a href="parkBrowser.html">Logout</a></li>
 </ul>
-<p id="breadcrumb"><a href="parkBrowser.html">Homepage </a>><a href="parkBrowser.html"> ParkBrowser</a>><a href="parkBrowser.html">Virginia Water</a></p>
 </div>
+<div id="orientationBar">
+<div id="breadcrumb">
+<ul>
+Site Path:<li><a href="parkBrowser.html">Homepage</a></li>
+/<li>Park Browser</li>
+</ul>
+</div>	
+<div id="searchSite">
+Search goParks: 
+<input type="text" name="siteSearch" value="Search Events, Parks, Users"></input>
+<input type="submit" class="actionButton" value="->"></input> <br>
+</div>
+</div>
+<div id="viewport">
 <div id="parkBrowseArea">
-<div id="parkListings">
-<table> <thead>
-<tr><th>Park Name</th><th>Park Location</th><th>Park View</th></tr></thead>
-<tr><td>Clayton Gardens</td><td>Hertfordshire</td><td><a href="parkBrowser.html">View</a></td></tr>
-<tr><th>Virginia Water</th><td>Surrey</td><td><a href="parkBrowser.html">View</a></td></tr>
-<tr><td>Daffodil Walks</td><td>Colney Heath</td><td><a href="parkBrowser.html">View</a></td></tr>
-<tr><td>Ince Park</td><td>Ince</td><td><a href="parkBrowser.html">View</a></td></tr>
-<tr></tr>
-</table>
-</div>
 <div id="parkSearchBox">
+<span style="color:black">	You are currently located at: </span>'Hertfordshire'<br><br>
+	View Nearby Parks:<input name="searchType" type="radio" value="nearbySearch" checked="checked">
+	<span style="background-color:rgba(0, 0, 0, 0.25)">View Parks By Search Rules:<input name="searchType" type="radio"  value="termSearch"></span>
+<br>
+<div id="searchForm">
 <form>
-Park Name: <input type="text" name="parkname"><br>
-Park Location:
-<select name="County">
+<label for="parkRange"> Maximum Distance Range: </label> <input type="text" size="1"name="parkRange"><span style="color:black">Miles</span> or <input type="text" size="1"name="parkRange"><span style="color:black">Kilometers</span></br>
+<label for="parkname"> Park Name: </label><input type="text" name="parkname"><br>
+<label for="County"> Park County: </label><select name="County" id="">
 <option value="Hertfordshire">Hertfordshire</option>
 <option value="Surrey">Surrey</option>
 <option value="Colney Heath">Colney Heath</option>
 <option value="Ince">Ince</option>
-</select>
-<br>
+<option value="London">London</option>
+<option value="Twickenham">Twickenham</option></select><br>
 Park Facilties:
-<br>
+<div id="faciltiesOptions">
 <ul>
-<li>Tennis Court:<input type="checkbox" name= "category" value="Tennis Court"> </li>
-<li>Dog Park:<input type="checkbox" name= "category" value="Dog Park"> </li>
-<li>Play Area:<input type="checkbox" name= "category" value="Play Area"> </li>
-<li>Lake: <input type="checkbox" name= "category" value="Lake"> </li>
-<li>Cafe: <input type="checkbox" name= "category" value="Cafe"> </li>
+<li><label for="disabled">Disabled Access: </label><input type="checkbox" name="category" value="disabled"></li>
+<li><label for="toilets">Toilets: </label><input type="checkbox" name="category" value="toilets"></li>
+<li><label for="Tennis Court">Tennis Court: </label><input type="checkbox" name= "category" value="Tennis Court"></li>
+<li><label for="Dog Park">Dog Park: </label><input type="checkbox" name= "category" value="Dog Park"> </li>
+<li><label for="Play Area">Play Area: </label><input type="checkbox" name= "category" value="Play Area"> </li>
+<li><label for="Lake">Lake: </label><input type="checkbox" name= "category" value="Lake"> </li>
+<li><label for="Cafe">Cafe: </label><input type="checkbox" name= "category" value="Cafe"> </li>
+<li><label for="Lockers">Lockers: </label><input type="checkbox" name="category" value="Lockers"></li>
+<li><label for="Recycling">Recyling Bins: </label><input type="checkbox" name="category" value="Recycling"></li>
+<li><label for="BikeRacks">Bicycle Racks: </label><input type="checkbox" name="category" value="BikeRacks"></li>
+<li><label for="ElectricCar">Electric Car Charging: </label><input type="checkbox" name="category" value="ElectricCar"></li>
+<li><label for="Warden">Warden Patrolled: </label><input type="checkbox" name="category" value="Warden"></li>
+<li><label for="Skating">Skating Area: </label><input type="checkbox" name="category" value="Skating"></li>
+<li><label for="Caravan">Caravan Restriction: </label><input type="checkbox" name="category" value="Caravan"></li>
+<li><label for="CustomFaciltity">Custom Faciltiy: </label><input type="text" name="CustomFacility" value="Keyword"></li>
 </ul>
-<input type="submit" value="Search">
+</div>
+</div>
+<input class="searchButton" type="submit" value="Search">
 </form>
 </div>
-</div>
-</div>
-<div id="parkViewPanel">
-	<table>
-	<tr><th><h1>Virginia Water</h1></th></tr>
-	<tr><th><img alt="Virgina Waters Park Shot" src="imgs/virginiaWatersSmallThumbnail.jpg"></th><td>Virginia Water was first dammed and flooded in 1753. Until the creation of the great reservoirs, it was the largest man-made body of water in the British Isles. Take a trip to the south bank and discover an ornamental cascade from the 18th Century, and the Leptis Magna Ruins, a 'Roman temple' built from columns and lintels brought from the ancient city of Leptis Magna in the early 19th Century. One of the area's more recent additions is a towering 100-foot high Totem Pole, a gift to HM The Queen from the government of British Columbia. 2013 saw the addition of the Virginia Water Pavilion, an impressive structure fabricated by sustainable timber supplies from the Windsor Forest, offering improved visitor facilities to the area. The woodlands surrounding the lake have been continuously planted since the middle of the 18th Century. The Frost Farm Plantation (at the south-western end of the lake) is also a designated SSI (Site of Special Interest), thanks to its maturity and biodiversity. There are reminders of the past wherever you look. The lake was once a place of pageantry and spectacle and home to a Chinese junk and fishing temples built on the shore.<br><br><h1><a href="parkBrowser.html">Travel Information</a></h1></td></tr>
-	<tr><td>Courtesy of: http://www.theroyallandscape.co.uk</td><td><h1>Park Facilities:</h1> Lake, Cafe, Dog Park, Play Area</td></th></tr>
-	</table>
+<div id="parkListings">
+<table summary="Park Listings table for either a search term or nearby locations"><thead>
+<tr><th>Viewing parks by:</th><th><h2>Nearby Locations</h2></th><span style="font-size: 12px"><th>48 Results</th></span></tr>
+<tr><th>Sorting by:</th><td>Ascending Distance</td><th>Units: <span style="color:blue">Miles</span> or <a href="parkBrowser.html">Kilometers</a></th></tr>
+<tr><th>Park<a href="parkBrowser.html"><img src="icons/sort.png" alt="Sort by Name" class="icon"></a></th><th>County<a href="parkBrowser.html"><img src="icons/sort.png" alt="Sort by Location" class="icon"></th><th>Distance<a href="parkBrowser.html"><img src="icons/sortSelected.png" alt="Sort by Distance" class=".icon"></th></thead><tbody>
+<tr><td><a href="parkBrowser.html">Clayton Gardens</td><td>Hertfordshire</td><td>2 Miles</td></tr>
+<tr><td><a href="parkBrowser.html">Virginia Water</th><td>Surrey</td><td>3.4 Miles</td></tr>
+<tr><td><a href="parkBrowser.html">Daffodil Walks</td><td>Hertfordshire</td><td>3.6 Miles</td></tr>
+<tr><td><a href="parkBrowser.html">Taddle Park</td><td>Hertfordshire</td><td>4 Miles</td></tr>
+<tr><td><a href="parkBrowser.html">Royal Flowers</td><td>London</td><td>7.5 Miles</td></tr>
+<tr><td><a href="parkBrowser.html">Hadmington Park</td><td>London</td><td>9 Miles</td></tr>
+<tr><td><a href="parkBrowser.html">George's Gardens</td><td>London</td><td>9.3 Miles</td></tr>
+<tr><td><a href="parkBrowser.html">Richmond Alley</td><td>London</td><td>11 Miles</td></tr>
+<tr><th><img src="icons/prvPage.png" alt="Previous Page" class=".icon">  Previous Page</th><th>1-<a href="parkBrowser.html">2</a>-<a href="parkBrowser.html">3</a>-<a href="parkBrowser.html">4</a>-<a href="parkBrowser.html">5</a></th><th><a href="parkBrowser.html">Next Page  <img src="icons/nxtPage.png" alt="Next Page" class=".icon"></th></a></tr>
+</tbody></table></div>
 </div>
 </body>
 </html>
